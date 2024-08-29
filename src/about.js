@@ -1,18 +1,32 @@
-export { createHomepage };
+export { createAboutPage };
 
-function createHomepage() {
-	const homepage = document.createElement("div");
+function createAboutPage() {
+	const aboutPage = document.createElement("div");
 	const title = document.createElement("h1");
+	const quote = document.createElement("h2");
 	const description = document.createElement("p");
 	const image = document.createElement("img");
 
-	title.textContent = "Savor the flavors of The Tasty Table";
-	description.textContent =
-		"Discover a culinary journey at the bear, where we bring you a symphony of tastes and aromas. Our menu features pasta. Whether you're craving soup or exploring new flavors, our expertly crafted dishes will delight your palate.";
+	title.textContent = "About";
+	quote.textContent = "Where Delicious Meets Comfort";
+	description.innerHTML = `
+    The Tasty Table, we're passionate about creating unforgettable dining experiences.
+    Our menu features a delightful fusion of flavors, inspired by global cuisines and
+    prepared with fresh, high-quality ingredients.
+    <br><br>
+    Whether you're craving a hearty breakfast, a light lunch, or a sumptuous dinner,
+    our menu has something to satisfy
+    every palate. From classic comfort foods to innovative culinary creations, each dish
+    is crafted with care and attention to detail.
+    <br><br>
+    Join us for a culinary journey an
+    discover the true meaning of deliciousness.
+    `;
 
-	homepage.appendChild(title);
-	homepage.appendChild(description);
-	homepage.setAttribute("id", "homepage");
+	aboutPage.appendChild(title);
+	aboutPage.appendChild(quote);
+	aboutPage.appendChild(description);
+	aboutPage.setAttribute("id", "homepage");
 
-	return homepage;
+	return aboutPage;
 }
