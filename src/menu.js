@@ -7,7 +7,7 @@ function createMenuPage() {
 
 	title.textContent = "Menu";
 
-	// CREATE APPETIZERS LIST
+	// APPETIZERS LIST
 	const appetizersTitle = document.createElement("h2");
 	appetizersTitle.textContent = "Appetizers";
 	const appetizersList = document.createElement("ul");
@@ -33,8 +33,35 @@ function createMenuPage() {
 		appetizersList.appendChild(appetizer);
 	});
 
+	// MAIN COURSES
+	const mainCoursesTitle = document.createElement("h2");
+	mainCoursesTitle.textContent = "Main courses";
+	const mainCoursesList = document.createElement("ul");
+	appetizersList.appendChild(mainCoursesTitle);
+
+	const mainCoursesItems = [
+		["Classic burger", 9],
+		["Grilled Cheese", 11],
+		["Spaghetti and Meatballs", 14],
+		["Chicken Tenders", 13],
+	];
+
+	mainCoursesItems.forEach(([item, price]) => {
+		const courseItem = document.createElement("li");
+		const itemTitle = document.createElement("p");
+		itemTitle.textContent = item;
+
+		const itemPrice = document.createElement("p");
+		itemPrice.textContent = `$${price}`;
+
+		courseItem.appendChild(itemTitle);
+		courseItem.appendChild(itemPrice);
+		mainCoursesList.appendChild(courseItem);
+	});
+
 	menuPage.appendChild(title);
 	menuPage.appendChild(appetizersList);
+	menuPage.appendChild(mainCoursesList);
 	menuPage.setAttribute("id", "menu");
 
 	return menuPage;
